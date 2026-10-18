@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Assignment 4: JavaScript</h1>
+  <nav>
+    <a href="#form-section">Form</a>
+    <a href="#faq-section">FAQ</a>
+    <a href="#popup-section">Popup</a>
+    <a href="#color-section">Color</a>
+    <a href="#time-section">Time</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Task 1: форма -->
+  <section id="form-section">
+    <h2>Sign Up</h2>
+    <form id="signup-form" novalidate>
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="example@mail.com">
+      <span class="error" id="email-error"></span>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="At least 8 characters">
+      <span class="error" id="password-error"></span>
+
+      <label for="confirm">Confirm password</label>
+      <input type="password" id="confirm" placeholder="Repeat password">
+      <span class="error" id="confirm-error"></span>
+
+      <button type="submit">Register</button>
+      <p class="success" id="form-success"></p>
+    </form>
+  </section>
+
+  <!-- Task 2: аккордеон -->
+  <section id="faq-section">
+    <h2>FAQ</h2>
+    <div class="item">
+      <div class="question">What is JavaScript?</div>
+      <div class="answer">
+        <p>JavaScript is a programming language that runs in the browser. It makes web pages interactive: it can react to clicks, check forms and change the page without reloading it.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="question">How is the JS file connected to the page?</div>
+      <div class="answer">
+        <p>With the <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code> tag at the end of the <code>&lt;body&gt;</code>. Placing it at the end means all HTML elements already exist when the script runs.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="question">What is an event listener?</div>
+      <div class="answer">
+        <p><code>addEventListener</code> attaches a function to an element. The function runs when the event happens, for example <code>click</code>, <code>submit</code> or <code>keydown</code>.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="question">How does this accordion work?</div>
+      <div class="answer">
+        <p>All answers have <code>max-height: 0</code> by default, so they are hidden. A click on a question sets <code>max-height</code> to the real height of the answer, and CSS <code>transition</code> animates the change. A second click sets it back to 0.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Task 3: попап -->
+  <section id="popup-section">
+    <h2>Contact</h2>
+    <p>Have a question? Send us a message.</p>
+    <button id="open-popup">Contact Us</button>
+  </section>
+
+  <!-- Task 4: цвет -->
+  <section id="color-section">
+    <h2>Background</h2>
+    <button id="color-btn">Change color</button>
+  </section>
+
+  <!-- Task 5: время -->
+  <section id="time-section">
+    <h2>Current date and time</h2>
+    <p id="clock"></p>
+  </section>
+
+</main>
+
+<!-- Попап лежит отдельно, вне секций -->
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close" id="close-popup" aria-label="Close">&times;</button>
+    <h3>Contact Us</h3>
+    <form id="contact-form" novalidate>
+      <input type="text" id="contact-name" placeholder="Your name">
+      <span class="error" id="contact-name-error"></span>
+
+      <input type="text" id="contact-email" placeholder="Your email">
+      <span class="error" id="contact-email-error"></span>
+
+      <textarea id="contact-message" placeholder="Message"></textarea>
+      <span class="error" id="contact-message-error"></span>
+
+      <button type="submit">Send</button>
+      <p class="success" id="contact-success"></p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>Group SE-2510 · Team: Maxim Batyushkin, Azamat Mustafin, Ramil Zhunussov</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
